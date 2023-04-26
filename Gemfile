@@ -48,6 +48,12 @@ gem "bootsnap", require: false
 # Login feature
 gem 'devise'
 
+# For getting video info
+gem 'video_info'
+
+# For ENV
+gem 'figaro'
+
 gem 'bootstrap', '~> 5.1.3'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

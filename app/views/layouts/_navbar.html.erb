@@ -29,9 +29,12 @@
       </ul>
       <%= form_with model: User, url: user_session_path, class: 'd-flex' do |f| %>
         <% if user_signed_in? %>
-          <div class="col-auto">
-            Welcome <%= current_user.name %>
-            <%= link_to 'Logout', destroy_user_session_path, type: :button, class: 'btn btn-dark ml-5' %>
+          <div class='me-3 d-flex align-items-md-center'>Welcome <%= current_user.name %></div>
+          <div class='me-3'>
+            <%= link_to 'Share a movie', new_movie_path, type: :button, class: 'btn btn-dark' %>
+          </div>
+          <div class='me-2'>
+            <%= link_to 'Logout', destroy_user_session_path, type: :button, class: 'btn btn-secondary' %>
           </div>
         <% else %>
           <%= f.text_field :email, class: 'form-control me-2', placeholder: 'Email' %>
