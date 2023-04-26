@@ -1,7 +1,8 @@
 class MoviesController < ApplicationController
   before_action :authenticate_user!, only: [:new]
 
-  def def index
+  def index
+    @movies = Movie.available
   end
 
   def new
@@ -12,7 +13,7 @@ class MoviesController < ApplicationController
     @movie = Movie.new movie_params
     if @movie.save
       flash[:notice] = 'Success'
-      redirect_back(fallback_location: movies_path)
+      redirect_to movies_path
     else
       render :new
     end

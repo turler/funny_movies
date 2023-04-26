@@ -1,20 +1,16 @@
-<div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col col-lg-5">
-      <div class="card">
-        <div class="card-header">
-          Share a youtube movie
+<div class="col col-lg-5">
+  <div class="card">
+    <div class="card-header">
+      Share a youtube movie
+    </div>
+    <div class="card-body justify-content-center">
+      <%= form_with model: @movie, class: 'row p-4' do |f| %>
+        <%= f.label :link, 'Youtube URL:', class: 'col-sm-4 col-form-label' %>
+        <div class='col-sm-8 mb-4'>
+          <%= f.text_field :link, required: true, class: 'form-control' %>
         </div>
-        <div class="card-body justify-content-center">
-          <%= form_with model: @movie, class: 'row p-4' do |f| %>
-            <%= f.label :link, 'Youtube URL:', class: 'col-sm-4 col-form-label' %>
-            <div class='col-sm-8 mb-4'>
-              <%= f.text_field :link, required: true, class: 'form-control' %>
-            </div>
-            <%= f.submit 'Share', class: 'btn btn-dark' %>
-          <% end %>
-        </div>
-      </div>
+        <%= f.submit 'Share', class: 'btn btn-dark' %>
+      <% end %>
     </div>
   </div>
 </div>
