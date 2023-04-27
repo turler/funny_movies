@@ -16,8 +16,8 @@
         </div>
       <% else %>
         <%= form_with model: User, url: user_session_path, class: 'd-flex' do |f| %>
-          <%= f.text_field :email, class: 'form-control me-2', placeholder: 'Email' %>
-          <%= f.password_field :password, class: 'form-control me-2', placeholder: 'Password' %>
+          <%= f.text_field :email, class: 'form-control me-2', placeholder: 'Email', required: true %>
+          <%= f.password_field :password, class: 'form-control me-2', placeholder: 'Password', required: true %>
           <%= f.submit 'Login/Registry' %>
         <% end %>
       <% end %>
