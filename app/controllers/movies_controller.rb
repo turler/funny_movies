@@ -11,6 +11,7 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new movie_params
+    @movie.user = current_user
     if @movie.save
       flash[:notice] = 'Your movie will be publish if available'
       redirect_to movies_path

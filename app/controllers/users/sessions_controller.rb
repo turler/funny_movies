@@ -7,7 +7,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    user = User.find_or_initialize_by(email: user_params[:email])
+    user = User.find_or_initialize_by(username: user_params[:username])
     if user.new_record?
       user.password = user_params[:password]
       if user.save
@@ -42,6 +42,6 @@ class Users::SessionsController < Devise::SessionsController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:username, :password)
   end
 end
