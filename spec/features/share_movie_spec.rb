@@ -15,7 +15,8 @@ RSpec.feature "ShareMovies", type: :feature do
     find('input#movie_link').set('https://www.youtube.com/watch?v=KAYxwOAo_yg')
     click_on 'Share'
     assert_text 'Your movie will be publish if available'
-    sleep(0.5)
+    movie = Movie.find_by_link('https://www.youtube.com/watch?v=KAYxwOAo_yg')
+    UpdateMovieDetailsJob.perform_sync(movie.id) if movie.present?
     visit('/')
     assert_text 'The Monkey King 1: Tôn Ngộ Không Đại Náo Thiên Cung'
   end
