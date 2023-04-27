@@ -60,6 +60,7 @@ gem 'bootstrap', '~> 5.1.3'
 
 group :development, :test do
   gem 'pry', '~> 0.13.1'
+  gem 'rspec-rails'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
@@ -78,6 +79,7 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'shoulda-matchers', '~> 5.0'
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"

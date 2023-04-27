@@ -21,7 +21,7 @@ class Users::SessionsController < Devise::SessionsController
         sign_in user
         flash[:notice] = 'Sign in successfully.'
       else
-        flash[:alert] = 'Wrong password'
+        flash[:alert] = 'Wrong password.'
       end
     end
     redirect_to root_path
