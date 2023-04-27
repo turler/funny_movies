@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   before_action :authenticate_user!, only: [:new]
 
   def index
-    @movies = Movie.available
+    @movies = Movie.available.includes(:user)
   end
 
   def new

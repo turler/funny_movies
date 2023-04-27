@@ -11,7 +11,7 @@
 </div>
 <div class='col-5 my-2'>
   <h3><%= movie.title %></h3>
-  <span>Shared by: <%= movie.author %></span><br/>
+  <span>Shared by: <%= movie.user.username %></span><br/>
   <span>Description:</span>
   <div><%= movie.description.truncate(400) %></div>
 </div>
