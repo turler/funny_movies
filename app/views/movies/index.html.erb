@@ -1,1 +1,5 @@
-<%= render @movies %>
+<%= turbo_stream_from "movies" %>
+<%= turbo_frame_tag "movies", class: 'row justify-content-md-center' do %>
+  <%= render @movies %>
+<% end %>
+
