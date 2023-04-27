@@ -12,10 +12,11 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new movie_params
     if @movie.save
-      flash[:notice] = 'Success'
+      flash[:notice] = 'Your movie will be publish if available'
       redirect_to movies_path
     else
-      render :new
+      flash[:alert] = @movie.errors.first.full_message
+      redirect_back(fallback_location: movies_path)
     end
   end
 
